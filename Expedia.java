@@ -20,7 +20,7 @@ public class Expedia {
 	
 		driver=new ChromeDriver();
 
-}
+	}
 
 	@BeforeMethod
 	public void url(){
@@ -44,10 +44,10 @@ public class Expedia {
 		agedetails.selectByVisibleText("3");
 		driver.findElement(By.xpath("//*[@id=\"adaptive-menu\"]/div/div/div/div[3]/button")).click();
 		driver.findElement(By.xpath("//*[@id=\"preferred-class-input-trigger\"]")).click();
-	    driver.findElement(By.xpath("//*[@id=\"preferred-class-input\"]/div/div/a[4]/span")).click();
+	        driver.findElement(By.xpath("//*[@id=\"preferred-class-input\"]/div/div/a[4]/span")).click();
 	    
-	    driver.findElement(By.xpath("//*[@id=\"d1-btn\"]")).click();
-	    while(true) {
+	        driver.findElement(By.xpath("//*[@id=\"d1-btn\"]")).click();
+	        while(true) {
 	    	
 	    	WebElement month=driver.findElement(By.xpath("//*[@id=\"wizard-flight-tab-roundtrip\"]/div[2]/div[2]/div/div/div[1]/div/div[2]/div/div[1]/div[2]/div[1]/h2"));
 	    	
@@ -64,7 +64,7 @@ public class Expedia {
 	    
 	    List<WebElement> alldates1=driver.findElements(By.xpath("//*[@id=\"app-layer-datepicker-flights-departure-arrival-start\"]/div[2]/div/div/div[2]/div/div[1]/table/tbody/tr[2]/td[4]"));
 		
-		for(WebElement dateelement:alldates1) {
+	    for(WebElement dateelement:alldates1) {
 			String date=dateelement.getAttribute("data-day");
 			System.out.println(date);
 			if(date.equals("18")) {
@@ -72,16 +72,16 @@ public class Expedia {
 				System.out.println("date selected");
 			}
 		}
-		driver.findElement(By.xpath("//*[@id=\"app-layer-datepicker-flights-departure-arrival-end\"]/div[2]/div/div/div[3]/button")).click();
+	    driver.findElement(By.xpath("//*[@id=\"app-layer-datepicker-flights-departure-arrival-end\"]/div[2]/div/div/div[3]/button")).click();
 		
-		driver.findElement(By.xpath("//*[@id=\"d2-btn\"]")).click();
+            driver.findElement(By.xpath("//*[@id=\"d2-btn\"]")).click();
 	    while(true) {
 	    	
-	    	WebElement month=driver.findElement(By.xpath("//*[@id=\"wizard-flight-tab-roundtrip\"]/div[2]/div[2]/div/div/div[1]/div/div[2]/div/div[1]/div[2]/div[1]/h2"));
+	    WebElement month=driver.findElement(By.xpath("//*[@id=\"wizard-flight-tab-roundtrip\"]/div[2]/div[2]/div/div/div[1]/div/div[2]/div/div[1]/div[2]/div[1]/h2"));
 	    	
-	    	String month1=month.getText();
-	    	if(month1.equals("April 2023")) {
-	    		break;
+	    String month1=month.getText();
+	    if(month1.equals("April 2023")) {
+	    	break;
 	    		
 	    	}
 	    	else
@@ -92,14 +92,14 @@ public class Expedia {
 	    
 	    List<WebElement> alldates2=driver.findElements(By.xpath("//*[@id=\"app-layer-datepicker-flights-departure-arrival-start\"]/div[2]/div/div/div[2]/div/div[1]/table/tbody/tr[2]/td[4]"));
 		
-		for(WebElement dateelement:alldates2) {
-			String date=dateelement.getAttribute("data-day");
-			System.out.println(date);
-			if(date.equals("18")) {
-				dateelement.click();
-				System.out.println("date selected");
-			}
+	    for(WebElement dateelement:alldates2) {
+		String date=dateelement.getAttribute("data-day");
+		System.out.println(date);
+		if(date.equals("18")) {
+			dateelement.click();
+			System.out.println("date selected");
 		}
-		driver.findElement(By.xpath("//*[@id=\"app-layer-datepicker-flights-departure-arrival-end\"]/div[2]/div/div/div[3]/button")).click();
+	    }
+	    driver.findElement(By.xpath("//*[@id=\"app-layer-datepicker-flights-departure-arrival-end\"]/div[2]/div/div/div[3]/button")).click();
 	}
 }
